@@ -43,10 +43,10 @@ public:
 			result::BasicFailure<BasicFailureRegistrar::ALREADY_INSIDE>> = 0;
 		virtual auto set_blocks(Aggregator<ConcreteBlock>* blocks) -> result::Result<
 			result::Success<ICfg::IBuilder*>,
-			result::BasicFailure<BasicFailureRegistrar::ALREADY_INSIDE>> = 0;
+			result::BasicFailure<BasicFailureRegistrar::NO_RESOURCES>> = 0;
 		virtual auto set_scopes(Aggregator<ConcreteScope>* scopes) -> result::Result<
 			result::Success<ICfg::IBuilder*>,
-			result::BasicFailure<BasicFailureRegistrar::ALREADY_INSIDE>> = 0;
+			result::BasicFailure<BasicFailureRegistrar::NO_RESOURCES>> = 0;
 		[[nodiscard]] virtual auto build() -> Concrete = 0;
 	};
 

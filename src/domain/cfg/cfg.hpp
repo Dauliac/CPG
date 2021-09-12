@@ -47,10 +47,10 @@ public:
 		result::BasicFailure<BasicFailureRegistrar::ALREADY_INSIDE>> override;
 	auto set_blocks(Aggregator<Block>* blocks) -> result::Result<
 		result::Success<ICfg::IBuilder*>,
-		result::BasicFailure<BasicFailureRegistrar::ALREADY_INSIDE>> override;
+		result::BasicFailure<BasicFailureRegistrar::NO_RESOURCES>> override;
 	auto set_scopes(Aggregator<Scope>* scopes) -> result::Result<
 		result::Success<ICfg::IBuilder*>,
-		result::BasicFailure<BasicFailureRegistrar::ALREADY_INSIDE>> override;
+		result::BasicFailure<BasicFailureRegistrar::NO_RESOURCES>> override;
 	[[nodiscard]] auto build() -> Cfg override;
 
 private:

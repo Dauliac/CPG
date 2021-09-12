@@ -7,6 +7,7 @@ target_sources(
           "${CMAKE_SOURCE_DIR}/src/domain/cfg/element/element.cpp"
           "${CMAKE_SOURCE_DIR}/src/domain/cfg/block/block.cpp"
           "${CMAKE_SOURCE_DIR}/src/domain/cfg/scope/scope.cpp"
+          "${CMAKE_SOURCE_DIR}/src/domain/cfg/scope/builder.cpp"
           "${CMAKE_SOURCE_DIR}/src/domain/cfg/cfg.cpp"
           # "${CMAKE_SOURCE_DIR}/src/domain/cfg/cfg-builder.cpp"
 )
@@ -37,7 +38,8 @@ target_include_directories(
           ${CLANG_INCLUDE_DIRS})
 
 target_link_libraries(
-  ${PROJECT_NAME} $<$<AND:$<CONFIG:Coverage>,$<CXX_COMPILER_ID:GNU>>:-lgcov>
+  ${PROJECT_NAME}
+  $<$<AND:$<CONFIG:Coverage>,$<CXX_COMPILER_ID:GNU>>:-lgcov>
   # -ldl -ltinfo -lpthread clang clangAST clangAnalysis clangBasic clangDriver
   # clangEdit clangIndex clangFrontend clangFrontendTool clangLex clangParse
   # clangSema clangEdit clangASTMatchers clangRewrite clangRewriteFrontend
